@@ -1,0 +1,209 @@
+---
+title: "Shrimp data"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+# Evaluation of YBFMP shrimp data
+
+## Background:
+
+-   Siberian prawn (*Exopalaemon modestus*) was first documented in the lower Sac River in 2000 and well established by 2002 (source: <https://www.slideserve.com/eldora/introduction-of-the-siberian-prawn-exopalaemon-modestus-to-the-sacramento-san-joaquin-delta>). From Brown and Hieb:
+    -   Likely introduced in the late 1990s
+    -   Documented as a prey item for larger fish
+    -   Serve as predators of meiofauna and prey for fish
+    -   High densities could affect invertebrate prey abundance, creating competition for resources between E. modestus and native shrimps and fishes
+-   Mississippi grass shrimp (*Palaemonetes kadiakensis*) was first documented in collections in 2005 and 2006 in Consumnes River. In 2012, one was caught by the Bay Study in the lower San Joaquin River and several collected in Georgian Slough by USFWS (Brown and Hieb 2014).
+    -   Smallest of the introduced shrimps
+    -   Less known about their role in the estuary
+
+![Photo by Steve Slater](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo91HZgNbJh3cG6yoVnA7f8V1l694WAWwSsA&s)
+
+## Current Data Collection Practices:
+
+### YBFMP
+
+-   Shrimp data was not routinely collected until 2012 when a new species, Mississippi Grass Shrimp (species code: SHRK), was noticed in the Delta. The YBFMP then enhanced it's data collection for shrimp to better track the spread of this new species in the system. The other species commonly found in YBMFP sampling are the invasive Siberian Prawn (species code: SHR).
+
+-   When encountered in the beach seine, fyke trap, or rotary screw trap, shrimp are identified to species and up to 20 of each species are measured, after which they are plus counted (same treatment as non-native fish species). For shrimp which are measured, the crew also denotes whether or not the individual shrimp has visible eggs. Measurements are taken from the eye to the end of the telson.
+
+    -   Typically, only shrimp/fish equal to or greater 25mm in length are measured and counted
+    -   Shrimp are considered incidental bycatch as these gear types don't effectively target benthic invertebrates
+
+### Other IEP Surveys
+
+-   DJFMP: counts and idenfies shrimp, counts jellyfish (pers comms Jacob Stagg)
+
+-   CDFW 20-mm and SLS: identify and measure jellyfish. The reason is that they can compete with larval fish for food, and jellyfis share a good indicator of salinity movement (pers comms Jessica Jimenez)
+
+-   Fall Midwater Trawl: identifies and counts all fish and invertebrates (IEP website)
+
+-   Fish Restoration Program: appears only fish processed from fish sampling gear (IEP website)
+
+-   Bay Study: Fish, caridean shrimp, and brachyuran crabs are identified, measured, and counted. Shrimp and crabs are also sexed (IEP website, Brown and Hieb 2014)
+
+-   Suisun Marsh: Fish and large invertebrates (e.g., clams, shrimps) are identified to species (IEP website)
+
+-   Summer Tow Net: Enumerates all fishes and several invertebrate species (IEP website; inverts appear to include jellyfish and shrimp)
+
+-   Fish salvage: only new or unusual species recorded, such as Mitten crab (pers comms Kyle Griffiths)
+
+**In summary, no other IEP long term monitoring programs appear to collect the level of shrimp data that is collected by the YBFMP besides the CDFW Bay Study.**
+
+## YBFMP Shrimp Data Overview:
+
+### Count data
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(lubridate) 
+
+totalcatch <- read_csv("edi.233.3/integrated_wq_totalcatch.csv")
+
+totalcatch$SampleDate <- as.Date(totalcatch$SampleDate, format = "%m/%d/%Y")
+
+#all
+totalcatch %>%
+  filter(OrganismCode %in% c("SHR", "SHRK")) %>%
+  filter(Count>0) %>%
+   ggplot(aes(x = SampleDate, y = Count, color=OrganismCode, shape=OrganismCode)) +
+    geom_point(alpha=0.6) + 
+    facet_wrap(~MethodCode, ncol = 1, scales = "free_y") +
+    theme_bw() +
+    labs(x = "Date", y= "Count") +
+    theme(text = element_text(size = 16))
+
+#by year
+totalcatch$Year <- as.integer(format(totalcatch$SampleDate, format = "%Y"))
+
+totalcatch.yr <- totalcatch %>% 
+  group_by(Year, MethodCode, OrganismCode) %>%
+  summarize("Tot.Count"= sum(Count, na.rm = T))
+
+totalcatch.yr %>%
+  filter(OrganismCode %in% c("SHR", "SHRK")) %>%
+   ggplot(aes(x = Year, y = Tot.Count, fill=OrganismCode)) +
+    geom_bar(stat='identity', position='dodge') + 
+    facet_wrap(~MethodCode, ncol = 1, scales = "free_y") +
+    theme_bw() +
+    labs(x = "Year", y= "Total Count") +
+    theme(text = element_text(size = 16))
+
+#total shrimp counted in a year since 2012
+totalcatch.all <- totalcatch.yr %>% 
+  filter(OrganismCode %in% c("SHR", "SHRK", "SPLT", "CHN")) %>%
+  filter(Year > "2011") %>%
+  group_by(OrganismCode) %>%
+  summarize("Full.Count"= sum(Tot.Count))
+
+totalcatch.all$IDTime_sec <- 15
+
+totalcatch.all$TotalTime_hrs <- (totalcatch.all$Full.Count * totalcatch.all$IDTime_sec)/3600
+
+totalcatch.all$TotalTime_hrs_yr <- totalcatch.all$TotalTime_hrs/10
+
+totalcatch.all$TotalCost_yr <- totalcatch.all$TotalTime_hrs * 137.76
+
+knitr::kable(head(totalcatch.all), "simple")
+```
+
+In the last decade, YBFMP staff have spent roughly 350% more time counting and identifying shrimp than the most abundant native fish species, Sacramento Splittail. The total time just identifying and counting is approximately 1.5 weeks of work per year. The total average annual cost is \~\$80k.
+
+### Length data
+
+```{r, message=FALSE, warning=FALSE}
+fish_unique <- read_csv("edi.233.3/fish_unique.csv")
+event <- read_csv("edi.233.3/event.csv")
+
+fish_unique2 <- merge(fish_unique, event, by="EventID")
+
+fish_unique2$SampleDate <- as.Date(fish_unique2$SampleDate, format = "%m/%d/%Y")
+
+#remove outliers
+fish_unique2<-fish_unique2[!(fish_unique2$OrganismID %in% c("2021_SHRK39", "2021_SHRK40", "2021_SHR127", "2017_SHR148", "2021_SHR129", "2007_SHR31", "2009_SHR2")),]
+
+fish_unique2 %>%
+  filter(OrganismCode %in% c("SHR", "SHRK")) %>%
+  ggplot(aes(x=ForkLength, fill=OrganismCode)) +
+  geom_histogram(position="identity", colour="black") +
+  facet_wrap(~OrganismCode, ncol = 1)
+
+#by year
+fish_unique2$Year <- as.integer(format(fish_unique2$SampleDate, format = "%Y"))
+
+fish_unique2 %>%
+  filter(OrganismCode %in% c("SHR", "SHRK")) %>%
+    filter(Year > "2011") %>%
+  ggplot(aes(x=ForkLength, fill=OrganismCode)) +
+  geom_histogram(position="identity", colour="black") +
+  facet_wrap(~OrganismCode*Year, scales = "free_y")
+
+#are length frequencies significantly different by year? (exclude low count and covid years)
+
+#total shrimp measured in a year since 2012
+fish_unique2$Count <- 1
+
+shrimp.meas <- fish_unique2 %>% 
+  filter(OrganismCode %in% c("SHR", "SHRK")) %>%
+  filter(Year > "2011") %>%
+  group_by(OrganismCode) %>%
+  summarize("Full.Count"= sum(Count))
+
+shrimp.meas$MeasTime_sec <- 30
+
+shrimp.meas$TotalTime_hrs <- (shrimp.meas$Full.Count * shrimp.meas$MeasTime_sec)/3600
+
+shrimp.meas$TotalTime_hrs_yr <- shrimp.meas$TotalTime_hrs/10
+
+knitr::kable(head(shrimp.meas), "simple")
+```
+
+Thoughts:
+
+-   Missing a good portion of the length frequency curve given 25mm size cutoff, affects smaller SHRK more than SHR
+
+-   Visually, no striking difference across years which makes me think additional years of data aren't critical to improve our understanding
+
+-   About 2 days/yr spent measuring shrimp - doesn't seem too bad in theory but when this time overlaps with hot summer field days it can have larger impacts on the field crews
+
+### Fecundity data
+
+```{r, message=FALSE, warning=FALSE}
+fish_unique2 %>%
+  filter(OrganismCode %in% c("SHR", "SHRK")) %>%
+  filter(Expression=="EGGS") %>%
+  ggplot(aes(x=ForkLength, fill=OrganismCode)) +
+  geom_histogram(position="identity", colour="black") +
+  facet_wrap(~OrganismCode, ncol = 1) +
+  labs(x = "Fork Length", y= "Total Count with Eggs")
+
+#by year - note the very low numbers
+fish_unique2 %>%
+  filter(OrganismCode %in% c("SHR", "SHRK")) %>%
+    filter(Year > "2011") %>%
+    filter(Expression=="EGGS") %>%
+  ggplot(aes(x=ForkLength, fill=OrganismCode)) +
+  geom_histogram(position="identity", colour="black") +
+  facet_wrap(~OrganismCode*Year, scales = "free_y") +
+    labs(x = "Fork Length", y= "Total Count with Eggs")
+
+fish_unique2$Jday <- as.integer(format(fish_unique2$SampleDate, format = "%j"))
+
+#timing of eggs - update with Julian day on the X axis
+fish_unique2 %>%
+  filter(OrganismCode %in% c("SHR", "SHRK")) %>%
+  filter(Expression=="EGGS") %>%
+      filter(Year > "2011") %>%
+  ggplot(aes(x=Jday, fill=OrganismCode)) +
+  geom_histogram(position="identity", colour="black") +
+  facet_wrap(~OrganismCode*Year, scales = "free_y") +
+  labs(x = "Date", y= "Total Count with Eggs")
+```
+
+Thoughts:
+
+-   Based on our bycatch data, we see peak egg presence in SHR around a length of 55mm and between 27-31mm for SHRK. These trends generally track across years.
+
+-   Timing of egg presence fluctuates a bit more across day of year, but is based on very low sample size. We see more in the late winter/spring but this may be confounded by the fact our screw trap only operates Jan-Jun.
