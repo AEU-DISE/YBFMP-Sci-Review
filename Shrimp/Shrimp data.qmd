@@ -60,15 +60,17 @@ editor_options:
 library(tidyverse)
 library(lubridate) 
 
-totalcatch <- read_csv("edi.233.3/integrated_wq_totalcatch.csv")
+totalcatch <- read_csv("Shrimp/edi.233.4/total_catch.csv")
+event <- read_csv("Shrimp/edi.233.4/event.csv")
+event$Date <- as.Date(event$SampleDate, format = "%m/%d/%Y")
 
-totalcatch$SampleDate <- as.Date(totalcatch$SampleDate, format = "%m/%d/%Y")
+totalcatch2 <- merge(totalcatch, event, by="EventID")
 
 #all
-totalcatch %>%
+totalcatch2 %>%
   filter(OrganismCode %in% c("SHR", "SHRK")) %>%
   filter(Count>0) %>%
-   ggplot(aes(x = SampleDate, y = Count, color=OrganismCode, shape=OrganismCode)) +
+   ggplot(aes(x = Date, y = Count, color=OrganismCode, shape=OrganismCode)) +
     geom_point(alpha=0.6) + 
     facet_wrap(~MethodCode, ncol = 1, scales = "free_y") +
     theme_bw() +
@@ -76,9 +78,9 @@ totalcatch %>%
     theme(text = element_text(size = 16))
 
 #by year
-totalcatch$Year <- as.integer(format(totalcatch$SampleDate, format = "%Y"))
+totalcatch2$Year <- as.integer(format(totalcatch2$Date, format = "%Y"))
 
-totalcatch.yr <- totalcatch %>% 
+totalcatch.yr <- totalcatch2 %>% 
   group_by(Year, MethodCode, OrganismCode) %>%
   summarize("Tot.Count"= sum(Count, na.rm = T))
 
@@ -114,8 +116,8 @@ In the last decade, YBFMP staff have spent roughly 350% more time counting and i
 ### Length data
 
 ```{r, message=FALSE, warning=FALSE}
-fish_unique <- read_csv("edi.233.3/fish_unique.csv")
-event <- read_csv("edi.233.3/event.csv")
+fish_unique <- read_csv("Shrimp/edi.233.4/fish_unique.csv")
+event <- read_csv("Shrimp/edi.233.4/event.csv")
 
 fish_unique2 <- merge(fish_unique, event, by="EventID")
 
