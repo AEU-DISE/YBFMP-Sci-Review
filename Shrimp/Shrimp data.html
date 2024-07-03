@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Shrimp data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Shrimp data_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Shrimp data_files/libs/quarto-html/quarto.js"></script>
+<script src="Shrimp data_files/libs/quarto-html/popper.min.js"></script>
+<script src="Shrimp data_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Shrimp data_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Shrimp data_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Shrimp data_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Shrimp data_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Shrimp data_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Shrimp data_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Shrimp data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="evaluation-of-ybfmp-shrimp-data" class="level1">
+<h1>Evaluation of YBFMP shrimp data</h1>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background:</h2>
+<ul>
+<li>Siberian prawn (<em>Exopalaemon modestus</em>) was first documented in the lower Sac River in 2000 and well established by 2002 (source: <a href="https://www.slideserve.com/eldora/introduction-of-the-siberian-prawn-exopalaemon-modestus-to-the-sacramento-san-joaquin-delta" class="uri">https://www.slideserve.com/eldora/introduction-of-the-siberian-prawn-exopalaemon-modestus-to-the-sacramento-san-joaquin-delta</a>). From Brown and Hieb:
+<ul>
+<li>Likely introduced in the late 1990s</li>
+<li>Documented as a prey item for larger fish</li>
+<li>Serve as predators of meiofauna and prey for fish</li>
+<li>High densities could affect invertebrate prey abundance, creating competition for resources between E. modestus and native shrimps and fishes</li>
+</ul></li>
+<li>Mississippi grass shrimp (<em>Palaemonetes kadiakensis</em>) was first documented in collections in 2005 and 2006 in Consumnes River. In 2012, one was caught by the Bay Study in the lower San Joaquin River and several collected in Georgian Slough by USFWS (Brown and Hieb 2014).
+<ul>
+<li>Smallest of the introduced shrimps</li>
+<li>Less known about their role in the estuary</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo91HZgNbJh3cG6yoVnA7f8V1l694WAWwSsA&amp;s.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Photo by Steve Slater</figcaption>
+</figure>
+</div>
+</section>
+<section id="current-data-collection-practices" class="level2">
+<h2 class="anchored" data-anchor-id="current-data-collection-practices">Current Data Collection Practices:</h2>
+<section id="ybfmp" class="level3">
+<h3 class="anchored" data-anchor-id="ybfmp">YBFMP</h3>
+<ul>
+<li><p>Shrimp data was not routinely collected until 2012 when a new species, Mississippi Grass Shrimp (species code: SHRK), was noticed in the Delta. The YBFMP then enhanced it’s data collection for shrimp to better track the spread of this new species in the system. The other species commonly found in YBMFP sampling are the invasive Siberian Prawn (species code: SHR).</p></li>
+<li><p>When encountered in the beach seine, fyke trap, or rotary screw trap, shrimp are identified to species and up to 20 of each species are measured, after which they are plus counted (same treatment as non-native fish species). For shrimp which are measured, the crew also denotes whether or not the individual shrimp has visible eggs. Measurements are taken from the eye to the end of the telson.</p>
+<ul>
+<li>Typically, only shrimp/fish equal to or greater 25mm in length are measured and counted</li>
+<li>Shrimp are considered incidental bycatch as these gear types don’t effectively target benthic invertebrates</li>
+</ul></li>
+</ul>
+</section>
+<section id="other-iep-surveys" class="level3">
+<h3 class="anchored" data-anchor-id="other-iep-surveys">Other IEP Surveys</h3>
+<ul>
+<li><p>DJFMP: counts and idenfies shrimp, counts jellyfish (pers comms Jacob Stagg)</p></li>
+<li><p>CDFW 20-mm and SLS: identify and measure jellyfish. The reason is that they can compete with larval fish for food, and jellyfis share a good indicator of salinity movement (pers comms Jessica Jimenez)</p></li>
+<li><p>Fall Midwater Trawl: identifies and counts all fish and invertebrates (IEP website)</p></li>
+<li><p>Fish Restoration Program: appears only fish processed from fish sampling gear (IEP website)</p></li>
+<li><p>Bay Study: Fish, caridean shrimp, and brachyuran crabs are identified, measured, and counted. Shrimp and crabs are also sexed (IEP website, Brown and Hieb 2014)</p></li>
+<li><p>Suisun Marsh: Fish and large invertebrates (e.g., clams, shrimps) are identified to species (IEP website)</p></li>
+<li><p>Summer Tow Net: Enumerates all fishes and several invertebrate species (IEP website; inverts appear to include jellyfish and shrimp)</p></li>
+<li><p>Fish salvage: only new or unusual species recorded, such as Mitten crab (pers comms Kyle Griffiths)</p></li>
+</ul>
+<p><strong>In summary, no other IEP long term monitoring programs appear to collect the level of shrimp data that is collected by the YBFMP besides the CDFW Bay Study.</strong></p>
+</section>
+</section>
+<section id="ybfmp-shrimp-data-overview" class="level2">
+<h2 class="anchored" data-anchor-id="ybfmp-shrimp-data-overview">YBFMP Shrimp Data Overview:</h2>
+<section id="count-data" class="level3">
+<h3 class="anchored" data-anchor-id="count-data">Count data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate) </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>totalcatch <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"edi.233.4/total_catch.csv"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>event <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"edi.233.4/event.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>event<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(event<span class="sc">$</span>SampleDate, <span class="at">format =</span> <span class="st">"%m/%d/%Y"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>totalcatch2 <span class="ot">&lt;-</span> <span class="fu">merge</span>(totalcatch, event, <span class="at">by=</span><span class="st">"EventID"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#all</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>totalcatch2 <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismCode <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"SHR"</span>, <span class="st">"SHRK"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Count<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Date, <span class="at">y =</span> Count, <span class="at">color=</span>OrganismCode, <span class="at">shape=</span>OrganismCode)) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.6</span>) <span class="sc">+</span> </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>MethodCode, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y=</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Shrimp-data_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#by year</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>totalcatch2<span class="sc">$</span>Year <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">format</span>(totalcatch2<span class="sc">$</span>Date, <span class="at">format =</span> <span class="st">"%Y"</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>totalcatch.yr <span class="ot">&lt;-</span> totalcatch2 <span class="sc">%&gt;%</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year, MethodCode, OrganismCode) <span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="st">"Tot.Count"</span><span class="ot">=</span> <span class="fu">sum</span>(Count, <span class="at">na.rm =</span> T))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>totalcatch.yr <span class="sc">%&gt;%</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismCode <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"SHR"</span>, <span class="st">"SHRK"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Tot.Count, <span class="at">fill=</span>OrganismCode)) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">'identity'</span>, <span class="at">position=</span><span class="st">'dodge'</span>) <span class="sc">+</span> </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>MethodCode, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y=</span> <span class="st">"Total Count"</span>) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Shrimp-data_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#total shrimp counted in a year since 2012</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>totalcatch.all <span class="ot">&lt;-</span> totalcatch.yr <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismCode <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"SHR"</span>, <span class="st">"SHRK"</span>, <span class="st">"SPLT"</span>, <span class="st">"CHN"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&gt;</span> <span class="st">"2011"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(OrganismCode) <span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="st">"Full.Count"</span><span class="ot">=</span> <span class="fu">sum</span>(Tot.Count))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>totalcatch.all<span class="sc">$</span>IDTime_sec <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>totalcatch.all<span class="sc">$</span>TotalTime_hrs <span class="ot">&lt;-</span> (totalcatch.all<span class="sc">$</span>Full.Count <span class="sc">*</span> totalcatch.all<span class="sc">$</span>IDTime_sec)<span class="sc">/</span><span class="dv">3600</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>totalcatch.all<span class="sc">$</span>TotalTime_hrs_yr <span class="ot">&lt;-</span> totalcatch.all<span class="sc">$</span>TotalTime_hrs<span class="sc">/</span><span class="dv">10</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>totalcatch.all<span class="sc">$</span>TotalCost_yr <span class="ot">&lt;-</span> totalcatch.all<span class="sc">$</span>TotalTime_hrs <span class="sc">*</span> <span class="fl">137.76</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(totalcatch.all), <span class="st">"simple"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">OrganismCode</th>
+<th style="text-align: right;">Full.Count</th>
+<th style="text-align: right;">IDTime_sec</th>
+<th style="text-align: right;">TotalTime_hrs</th>
+<th style="text-align: right;">TotalTime_hrs_yr</th>
+<th style="text-align: right;">TotalCost_yr</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CHN</td>
+<td style="text-align: right;">4379</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">18.24583</td>
+<td style="text-align: right;">1.824583</td>
+<td style="text-align: right;">2513.546</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SHR</td>
+<td style="text-align: right;">147246</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">613.52500</td>
+<td style="text-align: right;">61.352500</td>
+<td style="text-align: right;">84519.204</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SHRK</td>
+<td style="text-align: right;">4884</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">20.35000</td>
+<td style="text-align: right;">2.035000</td>
+<td style="text-align: right;">2803.416</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SPLT</td>
+<td style="text-align: right;">53865</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">224.43750</td>
+<td style="text-align: right;">22.443750</td>
+<td style="text-align: right;">30918.510</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>In the last decade, YBFMP staff have spent roughly 350% more time counting and identifying shrimp than the most abundant native fish species, Sacramento Splittail. The total time just identifying and counting is approximately 1.5 weeks of work per year. The total average annual cost is ~$80k.</p>
+</section>
+<section id="length-data" class="level3">
+<h3 class="anchored" data-anchor-id="length-data">Length data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fish_unique <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"edi.233.4/fish_unique.csv"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>event <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"edi.233.4/event.csv"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>fish_unique2 <span class="ot">&lt;-</span> <span class="fu">merge</span>(fish_unique, event, <span class="at">by=</span><span class="st">"EventID"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>fish_unique2<span class="sc">$</span>SampleDate <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(fish_unique2<span class="sc">$</span>SampleDate, <span class="at">format =</span> <span class="st">"%m/%d/%Y"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#remove outliers</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>fish_unique2<span class="ot">&lt;-</span>fish_unique2[<span class="sc">!</span>(fish_unique2<span class="sc">$</span>OrganismID <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"2021_SHRK39"</span>, <span class="st">"2021_SHRK40"</span>, <span class="st">"2021_SHR127"</span>, <span class="st">"2017_SHR148"</span>, <span class="st">"2021_SHR129"</span>, <span class="st">"2007_SHR31"</span>, <span class="st">"2009_SHR2"</span>)),]</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>fish_unique2 <span class="sc">%&gt;%</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismCode <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"SHR"</span>, <span class="st">"SHRK"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>ForkLength, <span class="at">fill=</span>OrganismCode)) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">position=</span><span class="st">"identity"</span>, <span class="at">colour=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>OrganismCode, <span class="at">ncol =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Shrimp-data_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#by year</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>fish_unique2<span class="sc">$</span>Year <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">format</span>(fish_unique2<span class="sc">$</span>SampleDate, <span class="at">format =</span> <span class="st">"%Y"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>fish_unique2 <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismCode <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"SHR"</span>, <span class="st">"SHRK"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Year <span class="sc">&gt;</span> <span class="st">"2011"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>ForkLength, <span class="at">fill=</span>OrganismCode)) <span class="sc">+</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">position=</span><span class="st">"identity"</span>, <span class="at">colour=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>OrganismCode<span class="sc">*</span>Year, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Shrimp-data_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#are length frequencies significantly different by year? (exclude low count and covid years)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#total shrimp measured in a year since 2012</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>fish_unique2<span class="sc">$</span>Count <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>shrimp.meas <span class="ot">&lt;-</span> fish_unique2 <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismCode <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"SHR"</span>, <span class="st">"SHRK"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&gt;</span> <span class="st">"2011"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(OrganismCode) <span class="sc">%&gt;%</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="st">"Full.Count"</span><span class="ot">=</span> <span class="fu">sum</span>(Count))</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>shrimp.meas<span class="sc">$</span>MeasTime_sec <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>shrimp.meas<span class="sc">$</span>TotalTime_hrs <span class="ot">&lt;-</span> (shrimp.meas<span class="sc">$</span>Full.Count <span class="sc">*</span> shrimp.meas<span class="sc">$</span>MeasTime_sec)<span class="sc">/</span><span class="dv">3600</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>shrimp.meas<span class="sc">$</span>TotalTime_hrs_yr <span class="ot">&lt;-</span> shrimp.meas<span class="sc">$</span>TotalTime_hrs<span class="sc">/</span><span class="dv">10</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(shrimp.meas), <span class="st">"simple"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">OrganismCode</th>
+<th style="text-align: right;">Full.Count</th>
+<th style="text-align: right;">MeasTime_sec</th>
+<th style="text-align: right;">TotalTime_hrs</th>
+<th style="text-align: right;">TotalTime_hrs_yr</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SHR</td>
+<td style="text-align: right;">18641</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">155.3417</td>
+<td style="text-align: right;">15.53417</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SHRK</td>
+<td style="text-align: right;">2907</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">24.2250</td>
+<td style="text-align: right;">2.42250</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Thoughts:</p>
+<ul>
+<li><p>Missing a good portion of the length frequency curve given 25mm size cutoff, affects smaller SHRK more than SHR</p></li>
+<li><p>Visually, no striking difference across years which makes me think additional years of data aren’t critical to improve our understanding</p></li>
+<li><p>About 2 days/yr spent measuring shrimp - doesn’t seem too bad in theory but when this time overlaps with hot summer field days it can have larger impacts on the field crews</p></li>
+</ul>
+</section>
+<section id="fecundity-data" class="level3">
+<h3 class="anchored" data-anchor-id="fecundity-data">Fecundity data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fish_unique2 <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismCode <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"SHR"</span>, <span class="st">"SHRK"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Expression<span class="sc">==</span><span class="st">"EGGS"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>ForkLength, <span class="at">fill=</span>OrganismCode)) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">position=</span><span class="st">"identity"</span>, <span class="at">colour=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>OrganismCode, <span class="at">ncol =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Fork Length"</span>, <span class="at">y=</span> <span class="st">"Total Count with Eggs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Shrimp-data_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#by year - note the very low numbers</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>fish_unique2 <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismCode <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"SHR"</span>, <span class="st">"SHRK"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Year <span class="sc">&gt;</span> <span class="st">"2011"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Expression<span class="sc">==</span><span class="st">"EGGS"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>ForkLength, <span class="at">fill=</span>OrganismCode)) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">position=</span><span class="st">"identity"</span>, <span class="at">colour=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>OrganismCode<span class="sc">*</span>Year, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Fork Length"</span>, <span class="at">y=</span> <span class="st">"Total Count with Eggs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Shrimp-data_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fish_unique2<span class="sc">$</span>Jday <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">format</span>(fish_unique2<span class="sc">$</span>SampleDate, <span class="at">format =</span> <span class="st">"%j"</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#timing of eggs - update with Julian day on the X axis</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>fish_unique2 <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(OrganismCode <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"SHR"</span>, <span class="st">"SHRK"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Expression<span class="sc">==</span><span class="st">"EGGS"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(Year <span class="sc">&gt;</span> <span class="st">"2011"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Jday, <span class="at">fill=</span>OrganismCode)) <span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">position=</span><span class="st">"identity"</span>, <span class="at">colour=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>OrganismCode<span class="sc">*</span>Year, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y=</span> <span class="st">"Total Count with Eggs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Shrimp-data_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Thoughts:</p>
+<ul>
+<li><p>Based on our bycatch data, we see peak egg presence in SHR around a length of 55mm and between 27-31mm for SHRK. These trends generally track across years.</p></li>
+<li><p>Timing of egg presence fluctuates a bit more across day of year, but is based on very low sample size. We see more in the late winter/spring but this may be confounded by the fact our screw trap only operates Jan-Jun.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

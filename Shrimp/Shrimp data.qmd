@@ -60,8 +60,8 @@ editor_options:
 library(tidyverse)
 library(lubridate) 
 
-totalcatch <- read_csv("Shrimp/edi.233.4/total_catch.csv")
-event <- read_csv("Shrimp/edi.233.4/event.csv")
+totalcatch <- read_csv("edi.233.4/total_catch.csv")
+event <- read_csv("edi.233.4/event.csv")
 event$Date <- as.Date(event$SampleDate, format = "%m/%d/%Y")
 
 totalcatch2 <- merge(totalcatch, event, by="EventID")
@@ -116,8 +116,8 @@ In the last decade, YBFMP staff have spent roughly 350% more time counting and i
 ### Length data
 
 ```{r, message=FALSE, warning=FALSE}
-fish_unique <- read_csv("Shrimp/edi.233.4/fish_unique.csv")
-event <- read_csv("Shrimp/edi.233.4/event.csv")
+fish_unique <- read_csv("edi.233.4/fish_unique.csv")
+event <- read_csv("edi.233.4/event.csv")
 
 fish_unique2 <- merge(fish_unique, event, by="EventID")
 
