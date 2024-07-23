@@ -34,9 +34,9 @@ editor_options:
 
 ### Other IEP Surveys
 
--   DJFMP: counts and idenfies shrimp, counts jellyfish (pers comms Jacob Stagg)
+-   DJFMP: counts and identifies shrimp, counts jellyfish (pers comms Jacob Stagg)
 
--   CDFW 20-mm and SLS: identify and measure jellyfish. The reason is that they can compete with larval fish for food, and jellyfis share a good indicator of salinity movement (pers comms Jessica Jimenez)
+-   CDFW 20-mm and SLS: identify and measure jellyfish. The reason is that they can compete with larval fish for food, and jellyfish share a good indicator of salinity movement (pers comms Jessica Jimenez)
 
 -   Fall Midwater Trawl: identifies and counts all fish and invertebrates (IEP website)
 
@@ -209,3 +209,17 @@ Thoughts:
 -   Based on our bycatch data, we see peak egg presence in SHR around a length of 55mm and between 27-31mm for SHRK. These trends generally track across years.
 
 -   Timing of egg presence fluctuates a bit more across day of year, but is based on very low sample size. We see more in the late winter/spring but this may be confounded by the fact our screw trap only operates Jan-Jun.
+
+## Recommendations:
+
+1.  Stop measuring shrimp and recording eggs.
+
+    -   We have collected enough information already to understand the size distribution of shrimp in the Yolo Bypass and peak fecundity based on size for each species. Additional data are not worth the additional effort and not necessary for consistency across IEP.
+
+2.  Lump all shrimp into a single plus count (don't speciate) but add a section to datasheet to mark which shrimp species were present.
+
+    -   Not totally sure about this one. Could be complicated on the datasheet. May preclude shrimp data we do collect from being used in syntheses.
+
+3.  Include counts for other bycatch, such as crayfish and tadpoles.
+
+    -   Would be a small effort and most other IEP surveys that count shrimp also include other non-fish bycatch.
