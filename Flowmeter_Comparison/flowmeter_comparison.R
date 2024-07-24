@@ -25,8 +25,8 @@ drift <- drift %>% fill(inundation,.direction = "down") #filling in missing inun
 
 
 # flow meter values before sepearate flow meters and after... 
-drift$meter_status <- ifelse(drift$datetime < '2021-04-26', "shared meter", "separate meter")
-
+drift$meter_status <- ifelse(drift$datetime < '2021-04-26', "before change", "after change")
+drift <- drift %>% reorder_levels(meter_status, order = c("before change", "after change"))
 # subset data ####
 reg_in <- drift[drift$flow_meter_speed == "Regular" & drift$inundation == "TRUE", ]
 low_in <- drift[drift$flow_meter_speed == "Low" & drift$inundation == "TRUE", ]
@@ -47,7 +47,8 @@ rotor_labels <- c("Low Flow Rotor", "High Flow Rotor")
 names(rotor_labels) <- c("Low", "Regular")
 
 drift$station <- factor(drift$station, levels = c("STTD", "SHR"))
-drift$meter_status <- factor(drift$meter_status, levels = c("shared meter", "separate meter"))
+
+ggboxplot(drift, x = "meter_status", y = "flowdiff_adj")
 
 (comp <- ggplot(drift, aes(x = meter_status, y=flowdiff_adj, fill = station))+
   geom_boxplot()+
@@ -61,9 +62,19 @@ drift$meter_status <- factor(drift$meter_status, levels = c("shared meter", "sep
         legend.position = "bottom")+
   facet_grid(inundation~flow_meter_speed, scales = "free_y", labeller = labeller(inundation = in_labels, flow_meter_speed = rotor_labels))
 )
-ggsave(comp, filename = "flowmeter_comparison_inundation+meter_speed.png", height = 5, width = 7, units = "in",dpi = 600)
-
-# Assumptions ####
+# ggsave(comp, filename = "flowmeter_comparison_inundation+meter_speed.png", height = 5, width = 7, units = "in",dpi = 600)
+ggplot(drift, aes(x = meter_status, y=flowdiff_adj, fill = station))+
+  geom_boxplot()+
+  stat_boxplot(geom = "errorbar")+
+  labs(y="adj. flow meter difference", x="", fill = "")+
+  scale_fill_manual(values = c("darkorange", "skyblue"))+
+  theme(axis.text.x = element_text(angle = 45, hjust=1))+
+  theme_classic(base_size = 12)+
+  theme(panel.grid.minor = element_blank(),
+        legend.key = element_rect(fill = "white", colour = "black"),
+        legend.position = "bottom")
+  # facet_grid(inundation~flow_meter_speed, scales = "free_y", labeller = labeller(inundation = in_labels, flow_meter_speed = rotor_labels))
+# T Test ####
 # Check variance bewteen groups:
 res <- var.test(flowdiff_adj ~ meter_status, data = drift)
 res # small p-value, there is a significant diff in variances 
@@ -88,8 +99,35 @@ t_low <- t.test(same_meter_low, diff_meter_low, alternative = "two.sided", var.e
 t_low #significantly different means
 # when using flow meters of the same kind, the drift net flow meter has higher revolutions 
 
+### Full Dataset KS Test #####
+res.kruskal <- drift %>% kruskal_test(flowdiff_adj ~ meter_status)
+pwc <- drift %>% dunn_test(flowdiff_adj ~ meter_status, p.adjust.method = "bonferroni")
 
+pwc <- pwc %>% add_xy_position(x = "meter_status")
+(alldat_plot <- ggboxplot(drift, x = "meter_status", y = "flowdiff_adj", fill = "station") +
+  stat_pvalue_manual(pwc, hide.ns = TRUE) +
+  labs(title = "All Data",
+    subtitle = get_test_label(res.kruskal, detailed = TRUE),
+    caption = get_pwc_label(pwc),
+    x = "", y = "Adjusted Flow Meter Difference"))
+# ggsave(alldat_plot, filename = "Flowmeter_Comparison/ks_results_alldata.png", height = 5, width = 7, units = "in",dpi = 600)
+#effect size: 
+drift %>% kruskal_effsize(flowdiff_adj~meter_status)
 
+### Low Rotor, No Inun Dataset KS Test #####
+res.kruskal.low <- low %>% kruskal_test(flowdiff_adj ~ meter_status)
+pwc.low <- low %>% dunn_test(flowdiff_adj ~ meter_status, p.adjust.method = "bonferroni")
+
+pwc.low <- pwc.low %>% add_xy_position(x = "meter_status")
+(lowdat_plot <- ggboxplot(low, x = "meter_status", y = "flowdiff_adj", fill = "station") +
+  stat_pvalue_manual(pwc.low, hide.ns = TRUE) +
+  labs(title = "Low Rotor, Not Inundated",
+    subtitle = get_test_label(res.kruskal.low, detailed = TRUE),
+    caption = get_pwc_label(pwc),
+    x = "", y = "Adjusted Flow Meter Difference"))
+# ggsave(lowdat_plot, filename = "Flowmeter_Comparison/ks_results_low rotor+noInun data.png", height = 5, width = 7, units = "in",dpi = 600)
+#effect size: 
+drift %>% kruskal_effsize(flowdiff_adj~meter_status)
 ##### TAKE AWAYS####
 # average values for flow meters are significantly different when using 'shared meter' or 'separate meters', this is true under different flow conditions. 
 # there appears to be greater concurrency between sites when using independent flow meters == variance between stations appears more consistent. Prior to using separate flow meters, there was much greater variation at STTD in meter values than at SHR. 
