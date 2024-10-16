@@ -48,9 +48,9 @@ names(rotor_labels) <- c("Low", "Regular")
 
 drift$station <- factor(drift$station, levels = c("STTD", "SHR"))
 
-ggboxplot(drift, x = "meter_status", y = "flowdiff_adj")
+ggboxplot(drift, x = "meter_status", y = "flowdiff")
 
-(comp <- ggplot(drift, aes(x = meter_status, y=flowdiff_adj, fill = station))+
+(comp <- ggplot(drift[drift$station == "STTD" & drift$flow_meter_speed == "Low",], aes(x = meter_status, y=flowdiff_adj, fill = meter_status))+
   geom_boxplot()+
   stat_boxplot(geom = "errorbar")+
   labs(y="adj. flow meter difference", x="", fill = "")+
@@ -59,8 +59,8 @@ ggboxplot(drift, x = "meter_status", y = "flowdiff_adj")
   theme_classic(base_size = 12)+
   theme(panel.grid.minor = element_blank(),
         legend.key = element_rect(fill = "white", colour = "black"),
-        legend.position = "bottom")+
-  facet_grid(inundation~flow_meter_speed, scales = "free_y", labeller = labeller(inundation = in_labels, flow_meter_speed = rotor_labels))
+        legend.position = "bottom")
+  # facet_grid(~flow_meter_speed, scales = "free_y", labeller = labeller(inundation = in_labels, flow_meter_speed = rotor_labels))
 )
 # ggsave(comp, filename = "flowmeter_comparison_inundation+meter_speed.png", height = 5, width = 7, units = "in",dpi = 600)
 ggplot(drift, aes(x = meter_status, y=flowdiff_adj, fill = station))+
@@ -74,6 +74,11 @@ ggplot(drift, aes(x = meter_status, y=flowdiff_adj, fill = station))+
         legend.key = element_rect(fill = "white", colour = "black"),
         legend.position = "bottom")
   # facet_grid(inundation~flow_meter_speed, scales = "free_y", labeller = labeller(inundation = in_labels, flow_meter_speed = rotor_labels))
+
+a <- hist(drift[drift$meter_status == "before change",]$flowdiff_adj, main = "Flow Meter Values from Ich/Zoop Nets", xlab = "flow meter difference")
+b <- hist(drift[drift$meter_status == "after change",]$flowdiff_adj, main = "Flow Meter Values from Drift Net", xlab = "flow meter difference")
+
+arrange(a,b)
 # T Test ####
 # Check variance bewteen groups:
 res <- var.test(flowdiff_adj ~ meter_status, data = drift)
