@@ -216,10 +216,4 @@ Thoughts:
 
     -   We have collected enough information already to understand the size distribution of shrimp in the Yolo Bypass and peak fecundity based on size for each species. Additional data are not worth the additional effort and not necessary for consistency across IEP.
 
-2.  Lump all shrimp into a single plus count (don't speciate) but add a section to datasheet to mark which shrimp species were present.
-
-    -   Not totally sure about this one. Could be complicated on the datasheet. May preclude shrimp data we do collect from being used in syntheses.
-
-3.  Include counts for other bycatch, such as crayfish and tadpoles.
-
-    -   Would be a small effort and most other IEP surveys that count shrimp also include other non-fish bycatch.
+2.  Instead, create a bycatch section on the datasheet for shrimp, crayfish, tadpoles, other - record presence and estimate abundance through codes related to count bins.
